@@ -2,32 +2,32 @@ import $ from 'jquery';
 
 export default class scrollLink {
   constructor(options) {
-    super();
-    this.$el = $(options.el);
-
     this.options = $.extend({
-      duration: 1000
+      duration: 1000,
+      easing: 'swing'
     }, options);
 
-    this.bindEvents();
+    this._bindEvents();
   }
 
-  bindEvents() {
-    this.$el.on('click', (e) => {
+  _bindEvents() {
+    $('[data-scroll]').on('click', (e) => {
       e.preventDefault();
-      this.scrollToContent(this.$el);
+      this._scrollToContent($(e.currentTarget));
     });
   }
 
-  scrollToContent(target) {
+  _scrollToContent(target) {
     const duration = this.options.duration;
-    let target = $(target).attr('href');
-    if (target === '#') {
-      target = $('body');
+    const easing = this.options.easing;
+    let scrollTarget = $(target).data('scroll');
+
+    if (scrollTarget === '#') {
+      scrollTarget = $('body');
     }
 
     $('html, body').animate({
-      scrollTop: $(target).offset().top
-    }, duration);
+      scrollTop: $(scrollTarget).offset().top
+    }, duration, easing);
   }
 }
