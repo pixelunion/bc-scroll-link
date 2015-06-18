@@ -23,6 +23,7 @@ new ScrollLink({
 ### Options
 
 `duration`: the scroll duration in milliseconds.
+
 `easing`: easing (only 'swing' and 'linear' available by default).
 
 ### Some sample markup

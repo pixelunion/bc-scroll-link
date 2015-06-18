@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-export default class scrollLink {
+export default class ScrollLink {
   constructor(options) {
     this.options = $.extend({
       duration: 1000,
