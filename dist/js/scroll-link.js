@@ -29,5 +29,11 @@ export default class ScrollLink {
     $('html, body').animate({
       scrollTop: $(scrollTarget).offset().top
     }, duration, easing);
+
+    if (history.replaceState) {
+      history.replaceState({}, scrollTarget, scrollTarget);
+    } else {
+      window.location.hash = scrollTarget;
+    }
   }
 }
