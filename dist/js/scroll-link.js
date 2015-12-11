@@ -3,17 +3,21 @@ import $ from 'jquery';
 export default class ScrollLink {
   constructor(options) {
     this.options = $.extend({
+      selector: '[data-scroll]',
       duration: 1000,
-      easing: 'swing'
+      easing: 'swing',
+      delay: 0
     }, options);
 
     this._bindEvents();
   }
 
   _bindEvents() {
-    $('[data-scroll]').on('click', (e) => {
+    $(this.options.selector).on('click', (e) => {
       e.preventDefault();
-      this._scrollToContent($(e.currentTarget));
+      setTimeout(() => {
+        this._scrollToContent($(e.currentTarget));
+      }, this.options.delay);
     });
   }
 
