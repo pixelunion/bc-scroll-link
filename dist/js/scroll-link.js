@@ -6,7 +6,8 @@ export default class ScrollLink {
       selector: '[data-scroll]',
       duration: 1000,
       easing: 'swing',
-      delay: 0
+      delay: 0,
+      offset: 0
     }, options);
 
     this._bindEvents();
@@ -31,7 +32,7 @@ export default class ScrollLink {
     }
 
     $('html, body').animate({
-      scrollTop: $(scrollTarget).offset().top
+      scrollTop: $(scrollTarget).offset().top + this.options.offset
     }, duration, easing);
 
     if (history.replaceState) {
