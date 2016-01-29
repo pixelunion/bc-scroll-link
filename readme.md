@@ -1,6 +1,6 @@
 # Bigcommerce Scroll Link Module
 
-Scroll to the top or any ID
+Scroll to the top or any ID / class
 
 ### Installation
 
@@ -22,9 +22,19 @@ new ScrollLink({
 
 ### Options
 
-`duration`: the scroll duration in milliseconds.
 
-`easing`: easing (only 'swing' and 'linear' available by default).
+`duration`: 
+the scroll duration in milliseconds.
+
+`easing`: 
+easing (only 'swing' and 'linear' available by default).
+
+`delay`: delay before scrolling.
+
+`updateHash`: (defaults to `true`) add the target to the URL? Set to `false` if targeting classes instead of IDs.
+
+### Methods
+`scrollToContent(target)`: Scroll to a target without using an anchor / button.
 
 ### Some sample markup
 
