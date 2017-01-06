@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "description": "Bigcommerce Scroll Link Module",
+  "main": "dist/js/scroll-link",
   "license": "MIT",
   "jspm": {
     "main": "js/scroll-link",
