@@ -5,7 +5,7 @@ Scroll to the top or any ID / class
 ### Installation
 
 ```
-jspm install --save bc-scroll-link=bitbucket:pixelunion/bc-scroll-link
+npm i --save github:pixelunion/bc-scroll-link
 ```
 
 ### Usage
